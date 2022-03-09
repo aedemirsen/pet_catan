@@ -1,0 +1,17 @@
+{
+    "language":"English",
+    "start_info_header":"Important Info",
+    "start_info":"This is an info message. This is an info message. This is an info message. This is an info message. This is an info message. This is an info message.",
+    "start_info_dontShowAgain":"Don't show again.",
+    "search":"Search",
+    "petcatan":"PetÇatan",
+    "adopt":"PetAdopt",
+    "market":"PetMarket",
+    "home":"Home",
+    "advert":"Adverts",
+    "chat":"Chats",
+    "notifications":"Notifications",
+    "profile":"Profile",
+    "filter":"Filtering"
+    
+}

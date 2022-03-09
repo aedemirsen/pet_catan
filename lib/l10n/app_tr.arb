@@ -1,0 +1,19 @@
+{
+    "language":"Türkçe",
+    "@language":{
+        "description":"Geçerli dil"
+    },
+    "start_info_header":"Önemli Bilgi",
+    "start_info":"Bu bir bilgilendirme ve uyarı mesajıdır.Bu bir bilgilendirme ve uyarı mesajıdır.Bu bir bilgilendirme ve uyarı mesajıdır.Bu bir bilgilendirme ve uyarı mesajıdır.Bu bir bilgilendirme ve uyarı mesajıdır.",
+    "start_info_dontShowAgain":"Bir daha gösterme.",
+    "search":"Ara",
+    "petcatan":"PetÇatan",
+    "adopt":"PetSahiplen",
+    "market":"PetMarket",
+    "home":"Ana Sayfa",
+    "advert":"İlanlar",
+    "chat":"Sohbetler",
+    "notifications":"Bildirimler",
+    "profile":"Profil",
+    "filter":"Filtreleme"
+}
