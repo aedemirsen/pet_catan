@@ -15,5 +15,15 @@
     "chat":"Sohbetler",
     "notifications":"Bildirimler",
     "profile":"Profil",
-    "filter":"Filtreleme"
+    "filter":"Filtrele",
+    "gender":"Cinsiyet",
+    "breed":"Tür",
+    "age":"Yaş(Ay)",
+    "neutered":"Kısırlaştırılmış",
+    "unneutered":"Kısırlaştırılmamış",
+    "color":"Renk",
+    "yes":"Evet",
+    "no":"No",
+    "added_fav":"Favorilere Eklendi!",
+    "removed_fav":"Favorilerden Çıkarıldı!"
 }

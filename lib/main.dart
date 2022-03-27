@@ -17,7 +17,6 @@ Future<void> main() async {
     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
   );
 
-  //await Firebase.initializeApp();
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -43,7 +42,6 @@ Future<void> main() async {
         PetCatanHomePage.routeName: (context) => const PetCatanHomePage(),
         NotificationPage.routeName: (context) => const NotificationPage(),
         ProfilePage.routeName: (context) => const ProfilePage(),
-        FilterScreen.routeName: (context) => const FilterScreen(),
       },
       //home: const MyApp(),
     ),

@@ -22,10 +22,7 @@ const double searchBoxHeight = 40;
 const double avatarRadius = 23;
 const double appBarHeight = 50;
 const double gridViewInset = 5;
-const likeIcon = Icon(
-  CupertinoIcons.heart_fill,
-  color: Colors.white,
-);
+const likeIcon = CupertinoIcons.heart_fill;
 const filterIcon = Icon(
   CupertinoIcons.slider_horizontal_3,
 );
@@ -34,6 +31,15 @@ const filterIcon = Icon(
 final Color filterScreenBackgroundColor = Colors.transparent.withOpacity(0.6);
 final double filterScreenWidth = AppConfig.screenWidth * 0.9;
 final double filterScreenHeight = AppConfig.screenHeight * 0.75;
+final double filtersHeight =
+    filterScreenHeight - filtersHeaderHeight - filterButtonHeight;
+const double filtersHeaderHeight = 50;
+const double filterButtonHeight = 50;
+
+const Icon filterDownIcon = Icon(
+  Icons.arrow_downward,
+  color: Colors.blue,
+);
 
 //Bottom Navigation Bar
 const double navBarHeight = 60;
@@ -55,3 +61,6 @@ const double optionBoxWidth = 110;
 const Color petCatanColor = Colors.orange;
 const Color petSahiplenColor = Colors.blue;
 const Color petMarketColor = Colors.teal;
+
+//Extended Advert Screen
+final double swiperHeight = AppConfig.screenHeight * 0.4;

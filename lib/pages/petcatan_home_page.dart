@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:pet_catan/TEST.dart';
 import 'package:pet_catan/other/page_router.dart';
+import 'package:pet_catan/pages/advert.dart';
 import 'package:pet_catan/pages/filter.dart';
 import 'package:pet_catan/pages/notification_page.dart';
 import 'package:pet_catan/pages/profile.dart';
@@ -73,7 +75,12 @@ class _PetCatanHomePageState extends State<PetCatanHomePage> {
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           const CustomAppBar(),
         ],
-        body: const GridViewer(),
+        body: const Padding(
+          padding: EdgeInsets.only(
+            bottom: conf.navBarHeight * 2,
+          ),
+          child: GridViewer(),
+        ),
       ),
     );
   }
@@ -143,26 +150,56 @@ class GridViewer extends StatefulWidget {
 }
 
 class _GridViewerState extends State<GridViewer> {
+  late Color _likeIconColor;
+
+  @override
+  void initState() {
+    _likeIconColor = Colors.white;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
+    return GridView.builder(
       padding: const EdgeInsets.all(conf.gridViewInset),
-      crossAxisCount: 2,
-      crossAxisSpacing: 2,
-      mainAxisSpacing: 2,
-      childAspectRatio: 1,
-      children: [
-        Card(
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: conf.AppConfig.screenWidth / 2,
+        crossAxisSpacing: 2,
+        mainAxisSpacing: 2,
+        childAspectRatio: 1,
+      ),
+      itemCount: TEST.test.adverts().length,
+      itemBuilder: (BuildContext context, index) {
+        return Card(
+          //elevation: 10,
           color: Colors.white30,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0),
           ),
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Stack(
+            alignment: Alignment.center,
             children: [
-              Image.asset(
-                'assets/images/kuymo.jpeg',
-                fit: BoxFit.fill,
+              GestureDetector(
+                child: SizedBox.expand(
+                  child: Image.asset(
+                    TEST.test
+                        .adverts()
+                        .elementAt(index)
+                        .imagePaths!
+                        .elementAt(0),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                onTap: () {
+                  PageRouter.pageRouter.changePageWithAnimation(
+                    context,
+                    ExtendedAdvert(
+                      advert: TEST.test.adverts().elementAt(index),
+                    ),
+                    PageRouter.pageRouter.downToUp,
+                  );
+                },
               ),
               //like icon
               Align(
@@ -172,37 +209,26 @@ class _GridViewerState extends State<GridViewer> {
                   height: 50,
                   child: IconButton(
                     padding: EdgeInsets.zero,
-                    icon: conf.likeIcon,
-                    onPressed: () {},
+                    icon: Icon(
+                      conf.likeIcon,
+                      color: _likeIconColor,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        if (_likeIconColor == Colors.white) {
+                          _likeIconColor = Colors.redAccent;
+                        } else {
+                          _likeIconColor = Colors.white;
+                        }
+                      });
+                    },
                   ),
                 ),
               ),
             ],
           ),
-        ),
-        Card(
-          color: Colors.white30,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Image.asset(
-            'assets/images/1.jpeg',
-            fit: BoxFit.fill,
-          ),
-        ),
-        Card(
-          color: Colors.white30,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          child: Image.asset(
-            'assets/images/2.jpeg',
-            fit: BoxFit.fill,
-          ),
-        ),
-      ],
+        );
+      },
     );
   }
 }

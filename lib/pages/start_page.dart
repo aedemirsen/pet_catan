@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pet_catan/pages/advert.dart';
 import 'package:pet_catan/pages/chat_page.dart';
 
 import '../config/app_config.dart';
@@ -23,11 +24,12 @@ class _StartState extends State<Start> {
   late double _optionBoxVerticalPosition;
   late bool _optionBoxVisible;
 
+  //floating action button
   late GlobalKey _fabKey;
 
   final _screens = [
     const PetCatanHomePage(),
-    Container(),
+    const AdvertPage(),
     const ChatPage(),
   ];
 

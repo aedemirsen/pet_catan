@@ -4,7 +4,7 @@
     "start_info":"This is an info message. This is an info message. This is an info message. This is an info message. This is an info message. This is an info message.",
     "start_info_dontShowAgain":"Don't show again.",
     "search":"Search",
-    "petcatan":"PetÇatan",
+    "petcatan":"PetCatan",
     "adopt":"PetAdopt",
     "market":"PetMarket",
     "home":"Home",
@@ -12,6 +12,17 @@
     "chat":"Chats",
     "notifications":"Notifications",
     "profile":"Profile",
-    "filter":"Filtering"
+    "filter":"Filter",
+    "gender":"Gender",
+    "breed":"Breed",
+    "age":"Age(Months)",
+    "neutered":"Neutered",
+    "unneutered":"Un Neutered",
+    "color":"Color",
+    "yes":"Yes",
+    "no":"No",
+    "added_fav":"Added To Favorites!",
+    "removed_fav":"Removed From Favorites!"
+
     
 }
